@@ -26,10 +26,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|intenger|null: false, primary_key: true|
-|group_name|string|null: false|
+|name|string|null: false|
 ### Association
 - has many :users, through: groups_users
 - has many :groups_users
+- has many :tweets
 
 ## groups_usersテーブル
 |Column|Type|Options|
