@@ -6,8 +6,9 @@
 |password|string|null: false|
 |name|string|null: false|
 ### Association
-- has many :groups, throught: :groups_user
+- has many :groups, throught: :groups_users
 - has many :tweets
+- has many :groups_users
 
 ## tweetsテーブル
 |Column|Type|Options|
@@ -25,14 +26,12 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|intenger|null: false, primary_key: true|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|group_name|string|null: false|
 ### Association
-- has_masny :users, through: groups_users
-- has_masny :groups_users
+- has many :users, through: groups_users
+- has many :groups_users
 
 ## groups_usersテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
