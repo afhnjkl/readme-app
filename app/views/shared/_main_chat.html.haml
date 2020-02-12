@@ -1,0 +1,43 @@
+.chat-main
+  .chat-main__header
+    .chat-main__header__titles
+      .chat-main__header__titles__title
+        test
+      .chat-main__header__titles__member
+        Member: masa
+
+    .chat-main__header__edit
+      = link_to "#", class: "Edit" do
+        = "Edit"
+  .chat-main__contents
+    .chat-main__contents__talk
+      .chat-main__contents__talk__name
+        masa
+      .chat-main__contents__talk__day
+        2020/2/10
+    .chat-main__contents__talk__comment
+      おはよう！
+
+    .chat-main__contents__talk
+      .chat-main__contents__talk__name
+        masa
+      .chat-main__contents__talk__day
+        2020/2/10
+    .chat-main__contents__talk__comment
+      こんにちは！
+
+    .chat-main__contents__talk
+      .chat-main__contents__talk__name
+        masa
+      .chat-main__contents__talk__day
+        2020/2/10
+    .chat-main__contents__talk__comment
+      こんばんは！
+
+  .chat-main__footer
+    .input-box
+      %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+      %label{class: "input-box__image"}
+        = icon('fas', 'image')
+        %input{type: "file", class: "input-box__image__file"}
+    %input{type: "submit", class: "submit-btn"}
