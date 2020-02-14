@@ -4,21 +4,16 @@
       .side-bar__header__profile__left
         = current_user.name
       .side-bar__header__profile__right
-        = link_to "#", class: "profile__right--icon" do
+        = link_to new_group_path, class: "profile__right--icon" do
           = icon('fas','edit edit-color')
         = link_to edit_user_path(current_user), class: "profile__right--icon" do
           = icon('fas','cog', class: 'icon')
 
-  .side-bar__contents
-    .side-bar__contents__groups
-      .side-bar__contents__groups__title
-        Techcamp
-      .side-bar__contents__groups__message
-        まだメッセージがありません
-
-    .side-bar__contents__groups
-      .side-bar__contents__groups__title
-        Techcamp
-      .side-bar__contents__groups__message
-        まだメッセージがありません
-
+  .side-bar__groups-list
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#', class: "groups" do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
