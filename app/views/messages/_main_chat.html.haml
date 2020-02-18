@@ -2,42 +2,22 @@
   .chat-main__header
     .chat-main__header__titles
       .chat-main__header__titles__title
-        test
+        = @group.name
       .chat-main__header__titles__member
-        Member: masa
+        = current_user.name
 
     .chat-main__header__edit
-      = link_to "#", class: "Edit" do
+      = link_to edit_group_path(@group) , class: "Edit" do
         = "Edit"
-  .chat-main__contents
-    .chat-main__contents__talk
-      .chat-main__contents__talk__name
-        masa
-      .chat-main__contents__talk__day
-        2020/2/10
-    .chat-main__contents__talk__comment
-      おはよう！
+  .messages
+    = render @messages
+    
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :text, class: 'new_message__textbox', placeholder: 'type a message' 
+      .form-mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden' 
+      = f.submit 'Send', class: 'form__submit'
 
-    .chat-main__contents__talk
-      .chat-main__contents__talk__name
-        masa
-      .chat-main__contents__talk__day
-        2020/2/10
-    .chat-main__contents__talk__comment
-      こんにちは！
-
-    .chat-main__contents__talk
-      .chat-main__contents__talk__name
-        masa
-      .chat-main__contents__talk__day
-        2020/2/10
-    .chat-main__contents__talk__comment
-      こんばんは！
-
-  .chat-main__footer
-    .input-box
-      %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-      %label{class: "input-box__image"}
-        = icon('fas', 'image')
-        %input{type: "file", class: "input-box__image__file"}
-    %input{type: "submit", class: "submit-btn"}

@@ -16,8 +16,8 @@
 |id|intenger|null: false, primary_key: true|
 |image|text||
 |text|text||
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|foreign_key: true|
+|group|references|foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
