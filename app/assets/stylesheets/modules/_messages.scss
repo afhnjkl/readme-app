@@ -36,16 +36,18 @@
             padding-left: 5px;
             text-decoration: none;
           }
-            
-
         }
-
       }
     }
+    &__groups-list::-webkit-scrollbar {
+      display: none;
+    }
+
     &__groups-list{
       background-color: #2f3e51;
       height: calc(100vh - 100px);
       padding: 0px 20px;
+      overflow-y: scroll;
 
       .group{
         
@@ -111,10 +113,20 @@
       }
     }
 
+    .messages::-webkit-scrollbar {
+      display: none;
+    }
+
     .messages{
       height: calc(100vh - 190px);
       background-color: #fafafa;
       padding-left: 40px;
+      overflow-y: scroll;
+      -ms-overflow-style: none; 
+      scrollbar-width: none; 
+
+    
+    
 
       .upper-message{
         display: flex;
