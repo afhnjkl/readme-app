@@ -7,10 +7,10 @@
 |name|string|null: false|
 ### Association
 - has many :groups, throught: :groups_users
-- has many :tweets
+- has many :messages
 - has many :groups_users
 
-## tweetsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|intenger|null: false, primary_key: true|
@@ -30,7 +30,7 @@
 ### Association
 - has many :users, through: groups_users
 - has many :groups_users
-- has many :tweets
+- has many :messages
 
 ## groups_usersテーブル
 |Column|Type|Options|
