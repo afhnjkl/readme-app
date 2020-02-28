@@ -96,6 +96,16 @@
           color: #999999;
           font-size: 12px;
           padding-top: 15px;
+          display: flex;
+
+          &__list{
+            display: flex;
+            list-style: none;
+
+            li { 
+              padding-right: 0.3rem;
+            }
+          }
         }}
 
       &__edit{
